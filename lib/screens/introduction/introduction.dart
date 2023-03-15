@@ -17,12 +17,20 @@ class AppIntroductionScreen extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Icon(Icons.star, size: 65, color: Colors.amber),
+              const Icon(Icons.star, size: 65),
               SizedBox(height: 40),
-              const Text('This is a study app. You can use it as you want.If '
-                  'you understand how it works you would be able to scale it. '
-                  'With this you will master firebase backend and flutter front'
-                  ' end.'),
+              const Text(
+                    'This is a study app. You can use it as you want.If '
+                    'you understand how it works you would be able to scale it. '
+                    'With this you will master firebase backend and flutter front'
+                    ' end.',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 18,
+                    color: onSurfaceTextColor,
+                    fontWeight: FontWeight.bold,
+              ),
+        ),
               SizedBox(height: 40),
               AppCircleButton(
                 onTap: () => null,

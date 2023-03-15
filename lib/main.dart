@@ -1,4 +1,6 @@
+import 'package:app_study/configs/themes/app_dark_theme.dart';
 import 'package:app_study/configs/themes/app_light_theme.dart';
+import 'package:app_study/controllers/theme.controller.dart';
 import 'package:app_study/data_uploader_screen.dart';
 import 'package:app_study/routes/app_routes.dart';
 import 'package:app_study/screens/introduction/introduction.dart';
@@ -22,7 +24,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      theme: LightTheme().buildLightTheme(),
+      theme: Get.find<ThemeController>().lightTheme,
       getPages: AppRoutes.routes(),
     );
   }
