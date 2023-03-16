@@ -1,8 +1,11 @@
 import 'package:app_study/controllers/question_paper/question_paper_controller.dart';
 import 'package:app_study/screens/home/home_screen.dart';
 import 'package:app_study/screens/introduction/introduction.dart';
+import 'package:app_study/screens/login/login_screen.dart';
 import 'package:app_study/screens/splash/splash_screen.dart';
 import 'package:get/get.dart';
+
+import '../controllers/zoom_drawer_controller.dart';
 
 class AppRoutes {
   static List<GetPage> routes() => [
@@ -16,6 +19,11 @@ class AppRoutes {
         page: () => const HomeScreen(),
         binding: BindingsBuilder(() {
           Get.put(QuestionPaperController());
+          Get.put(MyZoomDrawerController());
         })),
+    GetPage(
+        name: LoginScreen.routeName,
+        page: ()=>LoginScreen()
+    )
   ];
 }

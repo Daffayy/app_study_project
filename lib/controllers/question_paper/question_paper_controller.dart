@@ -1,3 +1,4 @@
+import 'package:app_study/controllers/auth_controller.dart';
 import 'package:app_study/firebase_ref/references.dart';
 import 'package:app_study/models/question_paper_model.dart';
 import 'package:app_study/services/firebase_storage_service.dart';
@@ -40,7 +41,23 @@ class QuestionPaperController extends GetxController {
       }
       allPapers.assignAll(paperList);
     } catch (e) {
-      print(e);
+      Logger().e(e);
     }
   }
+  void navigateToQuestions ({required QuestionPaperModel paper, bool tryAgain = false }){
+    AuthController _authController = Get.find();
+    if(_authController.isLoggedIn()){
+      if (tryAgain) {
+        Get.back();
+        // Get.offNamed(page)
+      }else{
+        print("logged in");
+        // Get.toNamed(page);
+      }
+    }else{
+      print('The title is ${paper.title}');
+      _authController.showLoginAlertDialogue();
+    }
+  }
+
 }
