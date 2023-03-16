@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
 
 class AppCircleButton extends StatelessWidget {
   const AppCircleButton({Key? key,
@@ -19,7 +21,9 @@ class AppCircleButton extends StatelessWidget {
       clipBehavior: Clip.hardEdge,
       shape: const CircleBorder(),
       child: InkWell(
-        child: child),
+        onTap: onTap,
+        child: child
+      ),
     );
   }
 }

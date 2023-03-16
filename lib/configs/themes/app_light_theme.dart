@@ -8,14 +8,12 @@ const Color primaryColorLight = Color(0xFFF85187);
 const Color mainTextColorLight = Color.fromARGB(255, 40, 40, 40);
 
 class LightTheme with SubThemeData {
-  buildLightTheme(){
+  buildLightTheme() {
     final ThemeData systemLightTheme = ThemeData.light();
     return systemLightTheme.copyWith(
+      primaryColor: primaryColorLight,
         iconTheme: getIconTheme(),
-      textTheme: getTextThemes().apply(
-        bodyColor: mainTextColorLight ,
-        displayColor: mainTextColorLight
-      )
-    );
+        textTheme: getTextThemes().apply(
+            bodyColor: mainTextColorLight, displayColor: mainTextColorLight));
   }
 }

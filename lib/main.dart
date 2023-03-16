@@ -12,9 +12,10 @@ import 'package:get/get.dart';
 import 'bindings/initial_bindings.dart';
 import 'firebase_options.dart';
 
-void main() {
+Future <void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  InitialBindings().dependencies();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  InitialBinding().dependencies();
   runApp(MyApp());
 }
 
@@ -30,8 +31,8 @@ class MyApp extends StatelessWidget {
   }
 }
 
-/*Future <void> main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-  runApp(GetMaterialApp(home: DataUploaderScreen()));
-}*/
+// Future <void> main() async {
+//   WidgetsFlutterBinding.ensureInitialized();
+//   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+//   runApp(GetMaterialApp(home: DataUploaderScreen()));
+// }
