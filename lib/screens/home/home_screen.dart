@@ -28,11 +28,12 @@ class HomeScreen extends GetView<MyZoomDrawerController> {
         return ZoomDrawer(
           borderRadius: 50.0,
           controller: _.zoomDrawerController,
+          menuScreenWidth: double.maxFinite,
           showShadow: true,
           angle: 0.0,
           style: DrawerStyle.defaultStyle,
           menuBackgroundColor: Colors.white.withOpacity(0.5),
-          slideWidth: MediaQuery.of(context).size.width*0.4,
+          slideWidth: MediaQuery.of(context).size.width*0.6,
           menuScreen: MyMenuScreen(),
           mainScreen: Container(
             decoration: BoxDecoration(gradient: mainGradient()),

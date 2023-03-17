@@ -12,7 +12,7 @@ class MyMenuScreen extends GetView<MyZoomDrawerController> {
   Widget build(BuildContext context) {
     return Container(
       padding: UIParameters.mobileScreenPadding,
-      width: double.maxFinite,
+      // width: double.maxFinite,
       decoration: BoxDecoration(gradient: mainGradient()),
       child: Theme(
           data: ThemeData(textButtonTheme:

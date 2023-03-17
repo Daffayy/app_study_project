@@ -30,11 +30,11 @@ class MyZoomDrawerController extends GetxController {
   }
 
   void website (){
-    _launch("https//www.dbestech.com");
+    _launch("https://www.dbestech.com/");
 
   }
   void facebook (){
-    _launch("https//www.facebook.com");
+    _launch("https://www.facebook.com/");
 
   }
   void email (){
