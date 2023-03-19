@@ -1,4 +1,7 @@
+import 'package:app_study/models/question_paper_model.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+
+import 'question_paper_model.dart';
 
 
 
@@ -59,6 +62,8 @@ class Questions {
   String question;
   List<Answers> answers;
   String? correctAnswer;
+  String? selectedtAnswer;
+
 
   Questions(
       {required this.id,
@@ -72,6 +77,13 @@ class Questions {
         answers =
         (json['answers'] as List).map((e) => Answers.fromJson(e)).toList(),
         correctAnswer = json['correct_answer'];
+
+  Questions.fromSnapshot(QueryDocumentSnapshot<Map<String, dynamic>> snapshot)
+  :id = snapshot.id,
+  question = snapshot['question'],
+  answers = [],
+  correctAnswer = snapshot['correct_answer'];
+
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
@@ -94,6 +106,10 @@ class Answers {
   Answers.fromJson(Map<String, dynamic> json)
       : identifier = json['identifier'],
         answer = json['Answer'];
+
+  Answers.fromSnapshot(QueryDocumentSnapshot <Map<String, dynamic>> snapshot)
+      : identifier = snapshot['identifier'] as String?,
+        answer = snapshot['answer'] as String?;
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();

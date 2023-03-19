@@ -6,6 +6,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:get/get.dart';
 import 'package:logger/logger.dart';
 
+import '../../screens/question/question_screen.dart';
+
 class QuestionPaperController extends GetxController {
   final allPaperImages = <String>[].obs;
   final allPapers = <QuestionPaperModel>[].obs;
@@ -49,10 +51,10 @@ class QuestionPaperController extends GetxController {
     if(_authController.isLoggedIn()){
       if (tryAgain) {
         Get.back();
-        // Get.offNamed(page)
+        Get.toNamed(QuestionsScreen.routeName, arguments: paper, preventDuplicates: false);
       }else{
         print("logged in");
-        // Get.toNamed(page);
+        Get.toNamed(QuestionsScreen.routeName, arguments: paper );
       }
     }else{
       print('The title is ${paper.title}');
